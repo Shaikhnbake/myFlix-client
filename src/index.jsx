@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 
 //Main component (will use all others)
-class MyFlixApplication extends React.component {
+class MyFlixApplication extends React.Component {
   render() {
     return (
       <div className="my-flix">
-        <div> Good morning </div>
+        <div>Good morning</div>
       </div>
     );
   }
