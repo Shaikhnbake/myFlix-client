@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 export class MovieView extends React.Component {
   
@@ -23,7 +24,28 @@ export class MovieView extends React.Component {
   }
 }
 
-{/*   
+
+MovieView.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    imgURL: PropTypes.string.isRequired,
+    year: PropTypes.string,
+    featured: PropTypes.string,
+    genre: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired
+    }),
+    director: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      bio: PropTypes.string.isRequired,
+      birthYear: PropTypes.string,
+      deathYear: PropTypes.string
+    })
+  }).isRequired,
+};
+
+/* {   
   
   keypressCallback(event){
     console.log(event.key);
@@ -37,4 +59,5 @@ export class MovieView extends React.Component {
     document.removeEventListener('keypress', this.keypressCallback);
   } 
 
-*/}
+
+  }  */
