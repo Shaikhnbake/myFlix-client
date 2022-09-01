@@ -1,0 +1,15 @@
+.movie-view, .movie-poster {
+  justify-content: center;
+  display: flex;
+}
+
+.movie-title {
+  font-size: large;
+  font-weight: bold;
+}
+
+.my-flix {
+  color: #000;
+}
+
+/*# sourceMappingURL=index.5f1df611.css.map */

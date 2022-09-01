@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { Container, Row, Col, Button} from "react-bootstrap";
 
+import './movie-view.scss';
+
 export class MovieView extends React.Component {
   
   render() {
