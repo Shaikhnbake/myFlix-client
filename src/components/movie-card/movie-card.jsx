@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
-import Card from "react-bootstrap/Card";
+import { Button, Card } from 'react-bootstrap';
 
 
 export class MovieCard extends React.Component {
@@ -9,7 +8,7 @@ export class MovieCard extends React.Component {
     const { movie, onMovieClick } = this.props;
 
     return (
-      <Card style={{width: '18rem'}}>
+      <Card className="movie-card" style={{width: '18rem'}}>
         <Card.Img crossOrigin= "true" variant="top" src={movie.imgURL} />
         <Card.Body>
           <Card.Title>{movie.title}</Card.Title>
