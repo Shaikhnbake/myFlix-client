@@ -1,0 +1,25 @@
+.registration-view {
+  justify-content: center;
+  display: flex;
+}
+
+.login-view {
+  justify-content: center;
+  display: flex;
+}
+
+.movie-card {
+  justify-content: center;
+  display: flex;
+}
+
+.movie-title {
+  font-size: large;
+  font-weight: bold;
+}
+
+.my-flix {
+  color: #000;
+}
+
+/*# sourceMappingURL=index.3bb28fe2.css.map */

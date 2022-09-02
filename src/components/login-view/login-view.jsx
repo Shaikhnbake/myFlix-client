@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import { Form, Button } from 'react-bootstrap';
 
+import './login-view.scss';
+
+
 export function LoginView (props){
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
@@ -14,7 +17,7 @@ export function LoginView (props){
     };
 
     return (
-        <Form>
+        <Form className="login-view sm">
             <Form.Group controlId="formUsername">
                 <Form.Label>Username:</Form.Label>
                 <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
