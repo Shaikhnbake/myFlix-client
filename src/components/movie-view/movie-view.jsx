@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Container, Row, Col, Button} from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
-  
+
   render() {
     const { movie, onBackClick } = this.props;
     return (
-      <Container fluid className="movie-view mx-auto sm">
+      <Container fluid className="movie-view mx-auto " sm={12} md={6} lg={3}>
         <Row>
           <Col className="movie-poster">
             <img src={movie.imgURL} crossOrigin="true" />
