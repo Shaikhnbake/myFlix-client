@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
+import { Form, Button } from 'react-bootstrap';
+
+import './login-view.scss';
+
+import axios from "axios";
+
 
 export function LoginView (props){
     const [ username, setUsername ] = useState('');
@@ -8,25 +14,36 @@ export function LoginView (props){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password);
-        props.onLoggedIn(username); 
+        axios.post('https://myflix1najm.herokuapp.com/login', {
+            username: username,
+            password: password
+        })
+        .then(response => {
+            const data = response.data;
+            props.onLoggedIn(data); 
+        })
+        .catch(e => {
+            console.log('User does not exist.')
+        });       
     };
 
     return (
-        <form>
-            <label>
-                Username:
-                <input type="text" value ={username} onChange={e => setUsername(e.target.value)} />
-            </label>
-            <label>
-                Password:
-                <input type="password" value ={password} onChange={e => setPassword(e.target.value)} />
-            </label>
-            <button type="button" onClick={handleSubmit}>Submit</button>
-        </form>
-    );
+        <Form className="login-view sm">
+            <Form.Group controlId="formUsername">
+                <Form.Label>Username:</Form.Label>
+                <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+            </Form.Group>
 
-}
+            <Form.Group controlId="formPassword">
+                <Form.Label>Password:</Form.Label>
+                <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+            </Form.Group>
+            <Button variant="primary" type="submit" onClick={handleSubmit}>
+                Submit
+            </Button>
+        </Form>
+    );
+} 
 
 
 

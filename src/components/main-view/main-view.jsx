@@ -6,6 +6,11 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
+import { Col, Row } from 'react-bootstrap';
+
+import './main-view.scss';
+
+
 export class MainView extends React.Component {
 
   constructor() {
@@ -18,7 +23,7 @@ export class MainView extends React.Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     axios.get('https://myflix1najm.herokuapp.com/movies')
       .then(Response => {
         this.setState({
@@ -30,45 +35,76 @@ export class MainView extends React.Component {
       });
   }
 
-/*When movie is clicked, function is called and changes state to selected movie */
-  
+  /*When movie is clicked, function is called and changes state to selected movie */
+
   setSelectedMovie(newSelectedMovie) {
     this.setState({
       selectedMovie: newSelectedMovie
     });
   }
 
-/* */
+  /* */
 
-  onLoggedIn(user) {
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      user
+      user: authData.user.username
+    });
+
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.username);
+    this.getMovies(authData.token);
+  }
+
+  onRegistration(register) {
+    this.setState({
+      register
     });
   }
 
-  onRegistration(register){
-    this.setState({
-      register
+  getMovies(token) {
+    axios.get('https://myflix1najm.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      //Assign result to state
+      this.setState({
+        movies: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
     });
   }
 
   render() {
     const { movies, selectedMovie, user, register } = this.state;
 
-    /* if not registered user, Regisraion view is rendered */    
-    if(!register) return <RegistrationView onRegistration={register => this.onRegistration(register)} />;
+    /* if not registered user, Regisraion view is rendered */
+    if (!register) return <RegistrationView onRegistration={register => this.onRegistration(register)} />;
 
-    /* if no user, LOGIN VIEW is rendered. If user logged in their details are passed as prop to LoginView */    
-    if(!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    /* if no user, LOGIN VIEW is rendered. If user logged in their details are passed as prop to LoginView */
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
 
-    if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
-    
+    if (selectedMovie) return (
+      <Row className='main-view justify-content-md-center'>
+        <Col sm={12} md={6} lg={3}>
+          <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+        </Col>
+      </Row>
+    );
+
+
     return (
-      <div className="main-view">
-        {movies.map(movie => <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />)}
-      </div>
+      <Row className='main-view justify-content-md-center'>
+        {movies.map(movie =>
+          <Col sm={12} md={6} lg={3}>
+            <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+          </Col>
+        )}
+      </Row>
     );
   }
 }
