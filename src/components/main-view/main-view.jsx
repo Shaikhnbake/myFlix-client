@@ -45,15 +45,35 @@ export class MainView extends React.Component {
 
   /* */
 
-  onLoggedIn(user) {
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      user
+      user: authData.user.username
     });
+
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.username);
+    this.getMovies(authData.token);
   }
 
   onRegistration(register) {
     this.setState({
       register
+    });
+  }
+
+  getMovies(token) {
+    axios.get('https://myflix1najm.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      //Assign result to state
+      this.setState({
+        movies: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
     });
   }
 

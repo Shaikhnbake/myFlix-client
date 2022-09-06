@@ -35,7 +35,7 @@ export function RegistrationView (props){
             </Form.Group>
             <Form.Group controlId="formBirthday">
                 <Form.Label>Birthday:</Form.Label>
-                <Form.Control type="text" onChange={e => setPassword(e.target.value)} />
+                <Form.Control type="text" onChange={e => setBirthday(e.target.value)} />
             </Form.Group>
             <Button variant="primary" type="submit" onClick={handleSubmit}>
                 Submit

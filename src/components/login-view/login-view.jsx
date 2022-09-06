@@ -4,6 +4,8 @@ import { Form, Button } from 'react-bootstrap';
 
 import './login-view.scss';
 
+import axios from "axios";
+
 
 export function LoginView (props){
     const [ username, setUsername ] = useState('');
@@ -12,8 +14,17 @@ export function LoginView (props){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password);
-        props.onLoggedIn(username); 
+        axios.post('https://myflix1najm.herokuapp.com/login', {
+            username: username,
+            password: password
+        })
+        .then(response => {
+            const data = response.data;
+            props.onLoggedIn(data); 
+        })
+        .catch(e => {
+            console.log('User does not exist.')
+        });       
     };
 
     return (
