@@ -10,6 +10,16 @@ export function ProfileView(props) {
     const [ user, setUser ] = useState(props.user);
     const [ movies, setMovies ] = useState(props.movies);
     const [ topMovies, setTopMovies ] = useState([]);
+
+    const [ username, setUsername ] = useState('');
+    const [ password, setPassword ] = useState('');
+    const [ email, setEmail ] = useState('');
+    const [ birthday, setBirthday ] = useState('');
+
+    const [ usernameErr, setUsernameErr ] = useState('');
+    const [ passwordErr, setPasswordErr ] = useState('');
+    const [ emailErr, setEmailErr ] = useState('');
+    const [ birthdayErr, setBirthdayErr ] = useState('');
     
     const token = localStorage.getItem('token');
     const localUser = localStorage.getItem('user');
@@ -107,29 +117,35 @@ export function ProfileView(props) {
     
     return (
     <Container>
+        <Row>
+            <p>User: {user.username}</p>
+            <p>Email: {user.email}</p>
+            <p>Birthday: {user.birthday}</p>
+        </Row>
+
         <Row className="mt-5">
             <Col md={12}>
-                <Form className="profile-view">
+                <Form className="updateProfile">
                     <h3>Account Details</h3>
                     <p>If you wish to make any changes please feel free to do so:</p>
                     <Form.Group controlId="formUsername">
-                        <Form.Label>Current Username: {user.username} </Form.Label>
+                        <Form.Label>Username:  </Form.Label>
                         <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
                         {usernameErr && <p>{usernameErr}</p>}
                     </Form.Group>
 
                     <Form.Group controlId="formPassword">
-                        <Form.Label>Password:</Form.Label>
+                        <Form.Label>Password: </Form.Label>
                         <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
                         {passwordErr && <p>{passwordErr}</p>}
                     </Form.Group>
                     <Form.Group controlId="formEmail">
-                        <Form.Label>Current Email: {user.email}</Form.Label>
+                        <Form.Label>Email: </Form.Label>
                         <Form.Control type="email" onChange={e => setEmail(e.target.value)} />
                         {emailErr && <p>{emailErr}</p>}
                     </Form.Group>
                     <Form.Group controlId="formBirthday">
-                        <Form.Label>Current Birthday: {user.birthday}</Form.Label>
+                        <Form.Label>Birthday: </Form.Label>
                         <Form.Control type="text" onChange={e => setBirthday(e.target.value)} />
                         {birthdayErr && <p>{birthdayErr}</p>}
                     </Form.Group>
