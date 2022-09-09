@@ -1,28 +1,30 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
+import UserInfo from "./user-info";
+import TopMovies from "./top-movies";
+import UpdateUser from "./update-user";
 
 import './profile-view.scss';
 import { useEffect } from "react";
 
 export function ProfileView(props) {
-    const [ user, setUser ] = useState(props.user);
+    const [ user, setUser ] = useState({
+        username: '',
+        email: '',
+        topMovies: []
+    })
     const [ movies, setMovies ] = useState(props.movies);
     const [ topMovies, setTopMovies ] = useState([]);
-
-    const [ username, setUsername ] = useState('');
-    const [ password, setPassword ] = useState('');
-    const [ email, setEmail ] = useState('');
-    const [ birthday, setBirthday ] = useState('');
-
-    const [ usernameErr, setUsernameErr ] = useState('');
-    const [ passwordErr, setPasswordErr ] = useState('');
-    const [ emailErr, setEmailErr ] = useState('');
-    const [ birthdayErr, setBirthdayErr ] = useState('');
     
     const token = localStorage.getItem('token');
     const localUser = localStorage.getItem('user');
+
+    const topMoviesList = movies.filter((movies) => {
+        return user.topMovies.includes(movies._id);
+    });
   
     const getUser = () => {
         axios.get(`https://myflix1najm.herokuapp.com/users/${localUser}`, {
@@ -112,54 +114,40 @@ export function ProfileView(props) {
         }
     };
 
+    
+
+    const removeTopMovie = (id) => {}
+
 
   
     
     return (
     <Container>
         <Row>
-            <p>User: {user.username}</p>
-            <p>Email: {user.email}</p>
-            <p>Birthday: {user.birthday}</p>
-        </Row>
-
-        <Row className="mt-5">
-            <Col md={12}>
-                <Form className="updateProfile">
-                    <h3>Account Details</h3>
-                    <p>If you wish to make any changes please feel free to do so:</p>
-                    <Form.Group controlId="formUsername">
-                        <Form.Label>Username:  </Form.Label>
-                        <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-                        {usernameErr && <p>{usernameErr}</p>}
-                    </Form.Group>
-
-                    <Form.Group controlId="formPassword">
-                        <Form.Label>Password: </Form.Label>
-                        <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
-                        {passwordErr && <p>{passwordErr}</p>}
-                    </Form.Group>
-                    <Form.Group controlId="formEmail">
-                        <Form.Label>Email: </Form.Label>
-                        <Form.Control type="email" onChange={e => setEmail(e.target.value)} />
-                        {emailErr && <p>{emailErr}</p>}
-                    </Form.Group>
-                    <Form.Group controlId="formBirthday">
-                        <Form.Label>Birthday: </Form.Label>
-                        <Form.Control type="text" onChange={e => setBirthday(e.target.value)} />
-                        {birthdayErr && <p>{birthdayErr}</p>}
-                    </Form.Group>
-                    <Button variant="primary" type="submit" onClick={handleUpdateSubmit}>
-                        Submit
-                    </Button>
-                </Form>
+            <Col xs={12} sm ={4}>
+                <Card>
+                    <Card.Body>
+                        <UserInfo name={user.username} email={user.email} birthday={user.birthday}/>
+                    </Card.Body>
+                </Card>
             </Col>
+            <Col xs={12} sm ={8}>
+                <Card>
+                    <Card.Body>
+                        <UpdateUser handleUpdateSubmit={handleUpdateSubmit} />                    
+                    </Card.Body>
+                </Card>     
+            </Col>      
         </Row>
+
         <Row className="topMovies">
             <Col>
-                {user.topMovies}
+                <TopMovies topMoviesList={topMoviesList} />
             </Col>
 
+        </Row>
+        <Row className="mt-5">
+           
         </Row>
         <Row>
             <p>Do you wish to delete you account?</p>
