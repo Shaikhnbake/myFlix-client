@@ -114,9 +114,6 @@ export function ProfileView(props) {
         }
     };
 
-    
-
-    const removeTopMovie = (id) => {}
 
 
   

@@ -22,7 +22,26 @@
 
 
 
+.topMovies-list {
+  margin-bottom: 20px;
+}
 
+.movie-card {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-card img {
+  height: 400px;
+  margin: auto;
+}
+
+.movie-card Button {
+  margin: auto;
+  display: block;
+}
 
 
 
