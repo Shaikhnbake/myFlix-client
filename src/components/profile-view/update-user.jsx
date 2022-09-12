@@ -1,5 +1,8 @@
 import React from "react";
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import {useState} from 'react';
+import axios from "axios";
+
 
 function UpdateUser(props) {
     const { user } = props;

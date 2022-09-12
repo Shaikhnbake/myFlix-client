@@ -4,6 +4,7 @@ import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import UserInfo from "./user-info";
 import TopMovies from "./top-movies";
 import UpdateUser from "./update-user";
+import axios from "axios";
 
 import './profile-view.scss';
 import { useEffect, useState } from "react";
