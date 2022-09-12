@@ -1,21 +1,15 @@
 import React from "react";
-import PropTypes from 'prop-types';
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 import UserInfo from "./user-info";
 import TopMovies from "./top-movies";
 import UpdateUser from "./update-user";
 
 import './profile-view.scss';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function ProfileView(props) {
-    const [ user, setUser ] = useState({
-        username: '',
-        email: '',
-        topMovies: []
-    })
+    const [ user, setUser ] = useState(props.user);
     const [ movies, setMovies ] = useState(props.movies);
     const [ topMovies, setTopMovies ] = useState([]);
     
@@ -31,8 +25,8 @@ export function ProfileView(props) {
           headers: { Authorization: `Bearer ${token}`}
         })
         .then(response => {
-         setUser(response.data);
-         setTopMovies(response.data.topMovies)
+            setUser(response.data);
+            setTopMovies(response.data.topMovies)
         })
         .catch(function (error) {
           console.log(error);
@@ -59,65 +53,6 @@ export function ProfileView(props) {
       })
     }
 
-    const validate = () => {
-        let isReq = true;
-        if(!username){
-            setUsernameErr('Username Required');
-            isReq = false;
-        }else if(username.length <2){
-            setUsernameErr('Username has to be atleast 3 characters')
-            isReq = false;
-        }
-        if(!password){
-            setPasswordErr('Password Required');
-            isReq = false;
-        }
-        if(!email){
-            setEmailErr('Email Required');
-            isReq = false;
-        }else if(email.indexOf('@') === -1){
-            setEmailErr('Email is not valid')
-            isReq = false;
-        }
-        if(!birthday){
-            setBirthdayErr('Birthday Required')
-            isReq = false;
-        }
-
-        return isReq;
-    }
-
-
-    const handleUpdateSubmit = (e) => {
-        e.preventDefault();
-        const isReq = validate();
-        if(isReq) {
-            axios.put('https://myflix1najm.herokuapp.com/users', {
-                username: username,
-                password: password,
-                email: email,
-                birthday: birthday
-
-            },
-            { 
-                headers: { Authorization: `Bearer ${token}`}
-            })
-            .then(response => {
-                alert('Changes were succesful!');
-                window.open('/users/:username','_self');
-                console.log(response.data);
-            })
-            .catch(response => {
-                console.log(response);
-                alert('Unable to update.')
-            });       
-        }
-    };
-
-
-
-  
-    
     return (
     <Container>
         <Row>
@@ -131,7 +66,7 @@ export function ProfileView(props) {
             <Col xs={12} sm ={8}>
                 <Card>
                     <Card.Body>
-                        <UpdateUser handleUpdateSubmit={handleUpdateSubmit} />                    
+                        <UpdateUser user={user} />                    
                     </Card.Body>
                 </Card>     
             </Col>      

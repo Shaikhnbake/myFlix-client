@@ -108,7 +108,7 @@ export class MainView extends React.Component {
             <LoginView movies={movies} onLoggedIn={user => this.onLoggedIn(user)} />
           </Col>
             return <Col md={8}>
-              <GenreView genre={movies.find(m => m.genre.name === match.params.name).genre} onBackClick={() => history.goBack()} />
+              <GenreView genre={movies.find(m => m.genre.name === match.params.name)} onBackClick={() => history.goBack()} />
             </Col>
           }} />
           <Route path='/directors/:name' render={({match, history}) => {
