@@ -28,10 +28,10 @@ function TopMovies({ topMoviesList }) {
             </Col>
         </Row>
         <Row>
-            {topMoviesList.map((movies) => {
+            {topMoviesList.map((movie) => {
                 return (
                     <Container>
-                        <Col className="topMovies-list" xs={12} md={6} lg={3} key={movies._id}>
+                        <Col className="topMovies-list" xs={12} md={6} lg={3} key={movie._id}>
                         <Card className="movie-card sm" style={{width: '18rem'}}>
                             <Card.Img crossOrigin= "true" variant="top" src={movie.imgURL} />
                             <Card.Body>
@@ -42,7 +42,7 @@ function TopMovies({ topMoviesList }) {
                             </Link>
                             </Card.Body>
                             <Card.Footer>
-                                <Button variant="secondary" onClick={() => removeTopMovie(movies._id) }>
+                                <Button variant="secondary" onClick={() => removeTopMovie(movie._id) }>
                                     Remove from Top Movies
                                 </Button>
                             </Card.Footer>
