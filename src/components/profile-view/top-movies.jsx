@@ -1,10 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import { Container, Card, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 
 import './profile-view.scss'
 
-function TopMovies({ topMoviesList }) {
+export function TopMovies(props) {
+    const {movies, topMovies, token, localUser} = props;
+
+    const topMoviesId = topMovies.map(m => m._id)
+
+    const topMoviesList = movies.filter(m => {
+        return topMoviesId.includes(m._id);
+    })
 
     const removeTopMovie = () => {
         axios.delete(`https://myflix1najm.herokuapp.com/users/${localUser}/movies/${movie._id}`, {

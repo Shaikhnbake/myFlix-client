@@ -40756,15 +40756,23 @@ $parcel$ReactRefreshHelpers$4364.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "TopMovies", ()=>TopMovies);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _profileViewScss = require("./profile-view.scss");
-function TopMovies({ topMoviesList  }) {
+function TopMovies(props) {
+    const { movies , topMovies , token , localUser  } = props;
+    const topMoviesId = topMovies.map((m)=>m._id);
+    const topMoviesList = movies.filter((m)=>{
+        return topMoviesId.includes(m._id);
+    });
     const removeTopMovie = ()=>{
-        axios.delete(`https://myflix1najm.herokuapp.com/users/${localUser}/movies/${movie._id}`, {
+        (0, _axiosDefault.default).delete(`https://myflix1najm.herokuapp.com/users/${localUser}/movies/${movie._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -40783,17 +40791,17 @@ function TopMovies({ topMoviesList  }) {
                         children: "Top Movies List"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/top-movies.jsx",
-                        lineNumber: 27,
+                        lineNumber: 36,
                         columnNumber: 17
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/profile-view/top-movies.jsx",
-                    lineNumber: 26,
+                    lineNumber: 35,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/top-movies.jsx",
-                lineNumber: 25,
+                lineNumber: 34,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -40816,7 +40824,7 @@ function TopMovies({ topMoviesList  }) {
                                         src: movie1.imgURL
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/top-movies.jsx",
-                                        lineNumber: 36,
+                                        lineNumber: 45,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
@@ -40825,14 +40833,14 @@ function TopMovies({ topMoviesList  }) {
                                                 children: movie1.title
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/top-movies.jsx",
-                                                lineNumber: 38,
+                                                lineNumber: 47,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                                                 children: movie1.description
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/top-movies.jsx",
-                                                lineNumber: 39,
+                                                lineNumber: 48,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -40842,18 +40850,18 @@ function TopMovies({ topMoviesList  }) {
                                                     children: "Read More.."
                                                 }, void 0, false, {
                                                     fileName: "src/components/profile-view/top-movies.jsx",
-                                                    lineNumber: 41,
+                                                    lineNumber: 50,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/top-movies.jsx",
-                                                lineNumber: 40,
+                                                lineNumber: 49,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/profile-view/top-movies.jsx",
-                                        lineNumber: 37,
+                                        lineNumber: 46,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Footer, {
@@ -40863,40 +40871,40 @@ function TopMovies({ topMoviesList  }) {
                                             children: "Remove from Top Movies"
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/top-movies.jsx",
-                                            lineNumber: 45,
+                                            lineNumber: 54,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/top-movies.jsx",
-                                        lineNumber: 44,
+                                        lineNumber: 53,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/top-movies.jsx",
-                                lineNumber: 35,
+                                lineNumber: 44,
                                 columnNumber: 25
                             }, this)
                         }, movie1._id, false, {
                             fileName: "src/components/profile-view/top-movies.jsx",
-                            lineNumber: 34,
+                            lineNumber: 43,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/top-movies.jsx",
-                        lineNumber: 33,
+                        lineNumber: 42,
                         columnNumber: 21
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "src/components/profile-view/top-movies.jsx",
-                lineNumber: 30,
+                lineNumber: 39,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/top-movies.jsx",
-        lineNumber: 24,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 }
@@ -40910,7 +40918,7 @@ $RefreshReg$(_c, "TopMovies");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./profile-view.scss":"eyKYH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eyKYH":[function() {},{}],"2SBwg":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","axios":"jo6P5","./profile-view.scss":"eyKYH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eyKYH":[function() {},{}],"2SBwg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$95d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
