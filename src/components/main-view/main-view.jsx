@@ -66,11 +66,15 @@ export class MainView extends React.Component {
     });
   }
 
- 
+  consoleuser(user){
+    console.log(user);
+  }
+  
   render() {
     const { movies,  user } = this.state;
 
     return (
+
      <Router>
       <NavigationBar user={user} />
       <Container>
