@@ -1,30 +1,22 @@
 import React from 'react';
 import axios from 'axios';
+
 import { connect } from 'react-redux';
+
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+
+import { setMovies, setUser } from '../../actions/actions';
+
+import MoviesList from '../movies-list/movies-list';
+
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
-import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
-
 import { NavigationBar } from '../navbar/navbar';
-
 import { Button, Col, Container, Row } from 'react-bootstrap';
-
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-
-import { setMovies } from '../../actions/actions';
-
-import MoviesList from '../movies-list/movies-list';
-
-/** 
- * 
- * Rest of components imports statemnts but wihout MovieCards
- * it will be inported and used in MoviesList component instead
- * 
- */
 
 import './main-view.scss';
 
@@ -32,9 +24,6 @@ class MainView extends React.Component {
 
   constructor() {
     super();
-    this.state = {
-      user: null
-    };
   }
 
 
@@ -42,7 +31,7 @@ class MainView extends React.Component {
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
-      this.setState({
+      this.props.setUser({
         user: localStorage.getItem('user')
       });
       this.getMovies(accessToken);
@@ -51,12 +40,15 @@ class MainView extends React.Component {
 
   onLoggedIn(authData) {
     console.log(authData);
-    this.setState({
+    this.props.setUser({
       user: authData.user.username
     });
 
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.username);
+    localStorage.setItem('email', authData.user.email);
+    localStorage.setItem('birthday', authData.user.birthday);
+    localStorage.setItem('topMovies', authData.user.topMovies);
     this.getMovies(authData.token);
   }
 
@@ -65,10 +57,7 @@ class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
-        //Assign result to state
-        this.setState({
-          movies: response.data
-        });
+        this.props.setMovies(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -77,8 +66,7 @@ class MainView extends React.Component {
 
 
   render() {
-    const { user } = this.state;
-    const { movies } = this.props;
+    const { movies, user } = this.props;
 
     return (
       <Router>
@@ -91,7 +79,6 @@ class MainView extends React.Component {
               </Col>
 
               if (movies.length === 0) return <div className="main-view" />;
-
 
               return <MoviesList movies={movies} />;
             }} />
@@ -146,10 +133,13 @@ class MainView extends React.Component {
 }
 
 let mapStateToProps = state => {
-  return { movies: state.movies }
+  return {
+    movies: state.movies,
+    user: state.user
+  }
 }
 
-export default connect(mapStateToProps, { setMovies })(MainView);
+export default connect(mapStateToProps, { setMovies, setUser })(MainView);
 
 
 
