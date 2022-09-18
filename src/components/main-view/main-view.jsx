@@ -40,19 +40,6 @@ export class MainView extends React.Component {
     }
   }
 
-  getUser(token){
-    axios.get('https://myflix1najm.herokuapp.com/users/:username', {
-      headers: { Authorization: `Bearer ${token}`}
-    })
-    .then(response => {
-      this.setState({
-        user: response.data
-      });
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
 
   onLoggedIn(authData) {
     console.log(authData);

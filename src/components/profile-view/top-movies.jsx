@@ -1,13 +1,17 @@
 import React from "react";
 import { Container, Card, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import './profile-view.scss'
 
-function TopMovies({ topMoviesList }) {
+export function TopMovies(props) {
 
-    const removeTopMovie = () => {
-        axios.delete(`https://myflix1najm.herokuapp.com/users/${localUser}/movies/${movie._id}`, {
+    const { movie, topMoviesList, localUser, token} = props;
+
+
+    const removeTopMovie = (movieId) => {
+        axios.delete(`https://myflix1najm.herokuapp.com/users/${localUser}/movies/${movieId}`, {
         headers: { Authorization: `Bearer ${token}`}
       })
       .then(response => {
@@ -28,10 +32,10 @@ function TopMovies({ topMoviesList }) {
             </Col>
         </Row>
         <Row>
-            {topMoviesList.map((movies) => {
+            {topMoviesList.map((movie) => {
                 return (
-                    <Container>
-                        <Col className="topMovies-list" xs={12} md={6} lg={3} key={movies._id}>
+                    <Container key={movie._id}>
+                        <Col className="topMovies-list" xs={12} md={6} lg={3} >
                         <Card className="movie-card sm" style={{width: '18rem'}}>
                             <Card.Img crossOrigin= "true" variant="top" src={movie.imgURL} />
                             <Card.Body>
@@ -42,7 +46,7 @@ function TopMovies({ topMoviesList }) {
                             </Link>
                             </Card.Body>
                             <Card.Footer>
-                                <Button variant="secondary" onClick={() => removeTopMovie(movies._id) }>
+                                <Button variant="secondary" onClick={() => removeTopMovie(movie._id) }>
                                     Remove from Top Movies
                                 </Button>
                             </Card.Footer>

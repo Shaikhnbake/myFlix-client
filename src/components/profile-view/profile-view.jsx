@@ -11,14 +11,14 @@ import { useEffect, useState } from "react";
 
 export function ProfileView(props) {
     const [ user, setUser ] = useState(props.user);
-    const [ movies, setMovies ] = useState(props.movies);
+    /* const [ movies, setMovies ] = useState(props.movies); */
     const [ topMovies, setTopMovies ] = useState([]);
     
     const token = localStorage.getItem('token');
     const localUser = localStorage.getItem('user');
 
-    const topMoviesList = movies.filter((movies) => {
-        return user.topMovies.includes(movies._id);
+    const topMoviesList = props.movies.filter((movies) => {
+        return user.topMovies?.includes(movies._id);
     });
   
     const getUser = () => {
