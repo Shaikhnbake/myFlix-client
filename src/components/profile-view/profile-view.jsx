@@ -75,7 +75,7 @@ export function ProfileView(props) {
 
         <Row className="topMovies">
             <Col>
-                <TopMovies topMoviesList={topMoviesList} />
+                <TopMovies topMoviesList={topMoviesList} token={token} localUser={localUser} />
             </Col>
 
         </Row>

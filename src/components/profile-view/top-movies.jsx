@@ -14,6 +14,7 @@ function TopMovies(props) {
       })
       .then(response => {
         console.log('Movie has been removed from top movies.');
+        window.open(`/users/${localUser}`, '_self');
       })
       .catch(function (error) {
         console.log(error);
