@@ -77,10 +77,6 @@ export function ProfileView(props) {
                 <Col>
                     <TopMovies topMoviesList={topMoviesList} token={token} localUser={localUser} />
                 </Col>
-
-            </Row>
-            <Row className="mt-5">
-
             </Row>
             <Row>
                 <p>Do you wish to delete you account?</p>
