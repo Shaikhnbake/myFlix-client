@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 function UpdateUser(props) {
-    const { user } = props;
+    const { user, token, localUser } = props;
 
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
@@ -50,7 +50,7 @@ function UpdateUser(props) {
         e.preventDefault();
         const isReq = validate();
         if(isReq) {
-            axios.put('https://myflix1najm.herokuapp.com/users', {
+            axios.put(`https://myflix1najm.herokuapp.com/users/${localUser}`, {
                 username: username,
                 password: password,
                 email: email,
@@ -62,7 +62,8 @@ function UpdateUser(props) {
             })
             .then(response => {
                 alert('Changes were succesful!');
-                window.open('/users/:username','_self');
+                localStorage.setItem('user', username);
+                window.open(`/users/${username}`,'_self');
                 console.log(response.data);
             })
             .catch(response => {

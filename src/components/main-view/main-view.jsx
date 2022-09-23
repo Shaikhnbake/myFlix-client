@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
-import { setMovies, setUser } from '../../actions/actions';
+import { setMovies, setFilter, setUser } from '../../actions/actions';
 
 import MoviesList from '../movies-list/movies-list';
 
@@ -24,6 +24,10 @@ class MainView extends React.Component {
 
   constructor() {
     super();
+
+    this.state = {
+      user: null
+    };
   }
 
 
@@ -31,7 +35,7 @@ class MainView extends React.Component {
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
-      this.props.setUser({
+      this.setState({
         user: localStorage.getItem('user')
       });
       this.getMovies(accessToken);
@@ -40,7 +44,7 @@ class MainView extends React.Component {
 
   onLoggedIn(authData) {
     console.log(authData);
-    this.props.setUser({
+    this.setState({
       user: authData.user.username
     });
 
@@ -51,6 +55,8 @@ class MainView extends React.Component {
     localStorage.setItem('topMovies', authData.user.topMovies);
     this.getMovies(authData.token);
   }
+
+ 
 
   getMovies(token) {
     axios.get('https://myflix1najm.herokuapp.com/movies', {
@@ -66,7 +72,8 @@ class MainView extends React.Component {
 
 
   render() {
-    const { movies, user } = this.props;
+    let { movies } = this.props;
+    let { user } = this.state;
 
     return (
       <Router>
@@ -133,10 +140,7 @@ class MainView extends React.Component {
 }
 
 let mapStateToProps = state => {
-  return {
-    movies: state.movies,
-    user: state.user
-  }
+  return { movies: state.movies }
 }
 
 export default connect(mapStateToProps, { setMovies, setUser })(MainView);

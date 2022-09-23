@@ -67,7 +67,7 @@ export function ProfileView(props) {
             <Col xs={12} sm ={8}>
                 <Card>
                     <Card.Body>
-                        <UpdateUser user={user} />                    
+                        <UpdateUser user={user} token={token} localUser={localUser}/>                    
                     </Card.Body>
                 </Card>     
             </Col>      
