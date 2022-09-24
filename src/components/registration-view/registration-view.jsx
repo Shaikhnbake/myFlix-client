@@ -59,8 +59,7 @@ export function RegistrationView (props){
 
             })
             .then(response => {
-                const data = response.data;
-                props.onRegistration(data); 
+                const data = response.data; 
                 alert('Registration succesful! Log in now');
                 window.open('/','_self');
             })
