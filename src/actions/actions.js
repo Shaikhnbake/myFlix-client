@@ -2,8 +2,8 @@ export const SET_MOVIES = 'SET_MOVIES';
 export const SET_FILTER = 'SET_FILTER';
 export const SET_USER = 'SET_USER';
 
-export function setUser(user) {
-    return { type: SET_USER, user };
+export function setUser(value) {
+    return { type: SET_USER, value };
 }
 
 export function setMovies(value) {

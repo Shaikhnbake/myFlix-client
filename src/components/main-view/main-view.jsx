@@ -69,13 +69,13 @@ class MainView extends React.Component {
 
   render() {
     let { movies } = this.props;
-    let { user } = this.props;
+    let { user } = this.props.user;
 
     return (
       <Router>
         <NavigationBar user={user} />
         <Container>
-          <Row className='main-view justify-content-md-center'>
+          <Row className='main-view justify-content-md-center mt-3 mx-auto'>
             <Route exact path='/' render={() => {
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
@@ -135,7 +135,7 @@ class MainView extends React.Component {
   }
 }
 
-let mapStateToProps = state => {
+let mapStateToProps = (state) => {
   return { movies: state.movies, user: state.user }
 }
 

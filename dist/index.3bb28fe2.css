@@ -40,9 +40,18 @@
 
 
 
+.search-bar {
+  max-width: 50%;
+}
+
 .movie-card {
   justify-content: center;
   display: flex;
+}
+
+.button {
+  border-style: double;
+  border-color: #000;
 }
 
 .my-flix {
