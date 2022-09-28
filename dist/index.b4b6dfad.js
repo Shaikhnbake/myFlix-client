@@ -40407,12 +40407,11 @@ var _s = $RefreshSig$();
 function ProfileView(props) {
     _s();
     const [user, setUser] = (0, _react.useState)(props.user);
-    const [movies, setMovies] = (0, _react.useState)(props.movies);
     const [topMovies, setTopMovies] = (0, _react.useState)([]);
     const token = localStorage.getItem("token");
     const localUser = localStorage.getItem("user");
-    const topMoviesList = movies.filter((movies)=>{
-        return user.topMovies.includes(movies._id);
+    const topMoviesList = props.movies.filter((movies)=>{
+        return user.topMovies?.includes(movies._id);
     });
     const getUser = ()=>{
         (0, _axiosDefault.default).get(`https://myflix1najm.herokuapp.com/users/${localUser}`, {
@@ -40579,7 +40578,7 @@ function ProfileView(props) {
         columnNumber: 5
     }, this);
 }
-_s(ProfileView, "IBgDJUhBJLxhf4XFzlvVpg5s/3o=");
+_s(ProfileView, "TEFEl5cVvZXJJ8hrEylBLZN4BdA=");
 _c = ProfileView;
 var _c;
 $RefreshReg$(_c, "ProfileView");
@@ -40697,17 +40696,17 @@ function TopMovies(props) {
                         children: "Top Movies List"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/top-movies.jsx",
-                        lineNumber: 30,
+                        lineNumber: 29,
                         columnNumber: 17
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/profile-view/top-movies.jsx",
-                    lineNumber: 29,
+                    lineNumber: 28,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/top-movies.jsx",
-                lineNumber: 28,
+                lineNumber: 27,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -40730,7 +40729,7 @@ function TopMovies(props) {
                                         src: movie.imgURL
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/top-movies.jsx",
-                                        lineNumber: 39,
+                                        lineNumber: 38,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
@@ -40739,14 +40738,14 @@ function TopMovies(props) {
                                                 children: movie.title
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/top-movies.jsx",
-                                                lineNumber: 41,
+                                                lineNumber: 40,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                                                 children: movie.description
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/top-movies.jsx",
-                                                lineNumber: 42,
+                                                lineNumber: 41,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -40756,18 +40755,18 @@ function TopMovies(props) {
                                                     children: "Read More.."
                                                 }, void 0, false, {
                                                     fileName: "src/components/profile-view/top-movies.jsx",
-                                                    lineNumber: 44,
+                                                    lineNumber: 43,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/top-movies.jsx",
-                                                lineNumber: 43,
+                                                lineNumber: 42,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/profile-view/top-movies.jsx",
-                                        lineNumber: 40,
+                                        lineNumber: 39,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Footer, {
@@ -40777,40 +40776,40 @@ function TopMovies(props) {
                                             children: "Remove from Top Movies"
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/top-movies.jsx",
-                                            lineNumber: 48,
+                                            lineNumber: 47,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/top-movies.jsx",
-                                        lineNumber: 47,
+                                        lineNumber: 46,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/top-movies.jsx",
-                                lineNumber: 38,
+                                lineNumber: 37,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/top-movies.jsx",
-                            lineNumber: 37,
+                            lineNumber: 36,
                             columnNumber: 25
                         }, this)
                     }, movie._id, false, {
                         fileName: "src/components/profile-view/top-movies.jsx",
-                        lineNumber: 36,
+                        lineNumber: 35,
                         columnNumber: 21
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "src/components/profile-view/top-movies.jsx",
-                lineNumber: 33,
+                lineNumber: 32,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/top-movies.jsx",
-        lineNumber: 27,
+        lineNumber: 26,
         columnNumber: 5
     }, this);
 }

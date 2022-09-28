@@ -22,7 +22,6 @@ function TopMovies(props) {
 
     }
 
-
     return (
     <Container>
         <Row>
