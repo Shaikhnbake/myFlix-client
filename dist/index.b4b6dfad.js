@@ -40551,6 +40551,8 @@ function ProfileView(props) {
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: "danger",
                         type: "submit",
+                        size: "sm",
+                        className: "button-delete",
                         onClick: deleteUser,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                             children: "CONFIRM DELETE"
