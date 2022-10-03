@@ -24,7 +24,7 @@ function TopMovies(props) {
 
     return (
     <Container>
-        <Row>
+        <Row className="mx-auto pb-4">
             <Col xs={12}>
                 <h1>Top Movies List</h1>
             </Col>
@@ -44,7 +44,7 @@ function TopMovies(props) {
                             </Link>
                             </Card.Body>
                             <Card.Footer>
-                                <Button variant="secondary" onClick={() => removeTopMovie(movie._id) }>
+                                <Button variant="danger" onClick={() => removeTopMovie(movie._id) }>
                                     Remove from Top Movies
                                 </Button>
                             </Card.Footer>

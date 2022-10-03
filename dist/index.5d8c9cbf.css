@@ -1,0 +1,82 @@
+.search-bar {
+  max-width: 50%;
+}
+
+.movie-card {
+  justify-content: center;
+  display: flex;
+}
+
+.button {
+  border-style: double;
+  border-color: #000;
+}
+
+.registration-view {
+  justify-content: center;
+  display: flex;
+}
+
+.login-view {
+  justify-content: center;
+  display: flex;
+}
+
+.movie-title {
+  font-size: large;
+  font-weight: bold;
+}
+
+
+
+
+
+.topMovies-list {
+  margin-bottom: 20px;
+}
+
+.movie-card {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-card img {
+  height: 400px;
+  margin: auto;
+}
+
+.movie-card Button {
+  margin: auto;
+  display: block;
+}
+
+.button-delete {
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  text-align: center;
+  background-color: #625a5a;
+  border-style: none;
+  border-radius: 8px;
+  outline: none;
+  margin: 0;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+  list-style: none;
+  display: inline-block;
+  position: relative;
+}
+
+
+
+.my-flix {
+  color: #000;
+}
+
+/*# sourceMappingURL=index.5d8c9cbf.css.map */

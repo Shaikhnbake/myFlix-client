@@ -83,7 +83,7 @@ export function ProfileView(props) {
            
         </Row>
         <Row>
-            <p>Do you wish to delete you account?</p>
+            <p><b>Do you wish to delete you account?</b></p>
                 <Button variant="danger" type="submit" size="sm" className="button-delete" onClick={deleteUser}>
                     <h1>CONFIRM DELETE</h1>
                 </Button>
