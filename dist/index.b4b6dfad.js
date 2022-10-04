@@ -36773,9 +36773,11 @@ function MoviesList(props) {
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 className: "g-4",
                 children: filteredMovies.map((m)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        xl: 3,
+                        lg: 4,
+                        md: 6,
+                        sm: 12,
                         xs: 12,
-                        md: 4,
-                        lg: 3,
                         className: "mx-auto",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                             movie: m
@@ -42356,11 +42358,9 @@ class MovieView extends (0, _reactDefault.default).Component {
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
             fluid: true,
             className: "movie-view mx-auto ",
-            sm: 12,
-            md: 6,
-            lg: 3,
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                    className: "mx-auto",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                         className: "movie-poster",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -43090,8 +43090,11 @@ function TopMovies(props) {
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                xs: 1,
-                md: 2,
+                xl: 2,
+                lg: 3,
+                md: 4,
+                sm: 6,
+                xs: 12,
                 className: "g-4",
                 children: topMoviesList.map((movie)=>{
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
