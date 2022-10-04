@@ -73,6 +73,12 @@
   position: relative;
 }
 
+.accountDetails {
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+
 
 
 .my-flix {

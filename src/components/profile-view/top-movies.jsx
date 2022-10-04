@@ -29,12 +29,12 @@ function TopMovies(props) {
                 <h1>Top Movies List</h1>
             </Col>
         </Row>
-        <Row xl={2} lg={3} md={4} sm={6} xs={12} className="g-4">
+        <Row xl={12} lg={6} md={4} sm={3} xs={2} className="mx-auto mb-3 d-flex pb-2">
             {topMoviesList.map((movie) => {
                 return (
                     <Container key={movie._id}>
-                        <Col className="topMovies-list" xs={12} md={6} lg={3} >
-                        <Card className="movie-card sm" style={{width: '18rem'}}>
+                        <Col className="topMovies-list d-flex">
+                        <Card className="movie-card flex-fill mb-2" style={{width: '20ren'}}>
                             <Card.Img crossOrigin= "true" variant="top" src={movie.imgURL} />
                             <Card.Body>
                             <Card.Title>{movie.title}</Card.Title>

@@ -10,8 +10,8 @@ export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
     return (
-      <Container fluid className="movie-view mx-auto ">
-        <Row className="mx-auto">
+      <Container fluid className="movie-view">
+        <Row>
           <Col className="movie-poster">
             <img src={movie.imgURL} crossOrigin="true" />
           </Col>
