@@ -56,8 +56,8 @@ export function ProfileView(props) {
 
     return (
     <Container fluid>
-        <Row>
-            <Col xs={12} sm ={4} >
+        <Row xl={2} lg={2} md={1}>
+            <Col>
                 <Card>
                     <Card.Body>
                         <UserInfo name={user.username} email={user.email} birthday={user.birthday}/>

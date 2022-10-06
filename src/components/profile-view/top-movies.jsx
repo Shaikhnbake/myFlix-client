@@ -29,7 +29,7 @@ function TopMovies(props) {
                 <h1>Top Movies List</h1>
             </Col>
         </Row>
-        <Row xl={12} lg={6} md={4} sm={3} xs={2} className="mx-auto mb-3 d-flex pb-2">
+        <Row xl={3} lg={2} md={12} className="mx-auto mb-3 d-flex pb-2">
             {topMoviesList.map((movie) => {
                 return (
                     <Container key={movie._id}>
