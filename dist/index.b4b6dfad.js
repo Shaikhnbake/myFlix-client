@@ -41952,199 +41952,204 @@ function RegistrationView(props) {
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-            className: "mt-5",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                md: 12,
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
-                    className: "registration-view sm",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                className: "mt-5 pb-3",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    md: 12,
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                             children: "Sign up here!"
                         }, void 0, false, {
                             fileName: "src/components/registration-view/registration-view.jsx",
+                            lineNumber: 77,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
+                            className: "registration-view sm",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                                    controlId: "formUsername",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                            columnn: true,
+                                            sm: 2,
+                                            children: "Username:"
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 80,
+                                            columnNumber: 25
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                            type: "text",
+                                            onChange: (e)=>setUsername(e.target.value)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 81,
+                                            columnNumber: 25
+                                        }, this),
+                                        usernameErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: usernameErr
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 82,
+                                            columnNumber: 41
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 79,
+                                    columnNumber: 21
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                                    controlId: "formPassword",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                            children: "Password:"
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 86,
+                                            columnNumber: 25
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                            type: "password",
+                                            onChange: (e)=>setPassword(e.target.value)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 87,
+                                            columnNumber: 25
+                                        }, this),
+                                        passwordErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: passwordErr
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 88,
+                                            columnNumber: 41
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 85,
+                                    columnNumber: 21
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                                    controlId: "formEmail",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                            children: "Email:"
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 91,
+                                            columnNumber: 25
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                            type: "email",
+                                            onChange: (e)=>setEmail(e.target.value)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 92,
+                                            columnNumber: 25
+                                        }, this),
+                                        emailErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: emailErr
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 93,
+                                            columnNumber: 38
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 90,
+                                    columnNumber: 21
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                                    controlId: "formBirthday",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                            children: "Birthday:"
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 96,
+                                            columnNumber: 25
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                            type: "text",
+                                            onChange: (e)=>setBirthday(e.target.value)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 97,
+                                            columnNumber: 25
+                                        }, this),
+                                        birthdayErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: birthdayErr
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 98,
+                                            columnNumber: 41
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 95,
+                                    columnNumber: 21
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/registration-view/registration-view.jsx",
                             lineNumber: 78,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {}, void 0, false, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 79,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                            controlId: "formUsername",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                                    children: "Username:"
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 81,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                                    type: "text",
-                                    onChange: (e)=>setUsername(e.target.value)
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 82,
-                                    columnNumber: 25
-                                }, this),
-                                usernameErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: usernameErr
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 83,
-                                    columnNumber: 41
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 80,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                            controlId: "formPassword",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                                    children: "Password:"
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 87,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                                    type: "password",
-                                    onChange: (e)=>setPassword(e.target.value)
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 88,
-                                    columnNumber: 25
-                                }, this),
-                                passwordErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: passwordErr
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 89,
-                                    columnNumber: 41
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 86,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                            controlId: "formEmail",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                                    children: "Email:"
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 92,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                                    type: "email",
-                                    onChange: (e)=>setEmail(e.target.value)
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 93,
-                                    columnNumber: 25
-                                }, this),
-                                emailErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: emailErr
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 94,
-                                    columnNumber: 38
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 91,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                            controlId: "formBirthday",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                                    children: "Birthday:"
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 97,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                                    type: "text",
-                                    onChange: (e)=>setBirthday(e.target.value)
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 98,
-                                    columnNumber: 25
-                                }, this),
-                                birthdayErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: birthdayErr
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 99,
-                                    columnNumber: 41
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 96,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                            variant: "primary",
-                            type: "submit",
-                            onClick: handleSubmit,
-                            children: "Submit"
-                        }, void 0, false, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 101,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {}, void 0, false, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 104,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: [
-                                "Already registered ",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/",
-                                    children: "sign in"
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 105,
-                                    columnNumber: 43
-                                }, this),
-                                " here"
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 105,
-                            columnNumber: 21
+                            columnNumber: 17
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 77,
-                    columnNumber: 17
+                    lineNumber: 76,
+                    columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 76,
-                columnNumber: 13
+                lineNumber: 75,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                className: "mx-auto",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                        variant: "primary",
+                        type: "submit",
+                        onClick: handleSubmit,
+                        children: "Submit"
+                    }, void 0, false, {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 104,
+                        columnNumber: 13
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: [
+                            "Already registered ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/",
+                                children: "sign in"
+                            }, void 0, false, {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 107,
+                                columnNumber: 35
+                            }, this),
+                            " here"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 107,
+                        columnNumber: 13
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/registration-view/registration-view.jsx",
+                lineNumber: 103,
+                columnNumber: 9
             }, this)
-        }, void 0, false, {
-            fileName: "src/components/registration-view/registration-view.jsx",
-            lineNumber: 75,
-            columnNumber: 9
-        }, this)
-    }, void 0, false, {
+        ]
+    }, void 0, true, {
         fileName: "src/components/registration-view/registration-view.jsx",
         lineNumber: 74,
         columnNumber: 6

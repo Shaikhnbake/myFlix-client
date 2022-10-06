@@ -72,13 +72,12 @@ export function RegistrationView (props){
 
     return (
      <Container>
-        <Row className="mt-5">
+        <Row className="mt-5 pb-3">
             <Col md={12}>
+            <h3>Sign up here!</h3>
                 <Form className="registration-view sm">
-                    <h3>Sign up here!</h3>
-                    <p></p>
                     <Form.Group controlId="formUsername">
-                        <Form.Label>Username:</Form.Label>
+                        <Form.Label columnn sm={2}>Username:</Form.Label>
                         <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
                         {usernameErr && <p>{usernameErr}</p>}
                     </Form.Group>
@@ -98,13 +97,14 @@ export function RegistrationView (props){
                         <Form.Control type="text" onChange={e => setBirthday(e.target.value)} />
                         {birthdayErr && <p>{birthdayErr}</p>}
                     </Form.Group>
-                    <Button variant="primary" type="submit" onClick={handleSubmit}>
-                        Submit
-                    </Button>
-                    <p></p>
-                    <p>Already registered <Link to={'/'}>sign in</Link> here</p>
                 </Form>
             </Col>
+        </Row>
+        <Row className="mx-auto">
+            <Button variant="primary" type="submit" onClick={handleSubmit}>
+                Submit
+            </Button>
+            <p>Already registered <Link to={'/'}>sign in</Link> here</p>
         </Row>
      </Container>
     );
@@ -113,7 +113,6 @@ export function RegistrationView (props){
 RegistrationView.propTypes = {
     onRegistration: PropTypes.func.isRequired    
 };
-
 /*
  register: PropTypes.shape({
         username: PropTypes.string.isRequired,
