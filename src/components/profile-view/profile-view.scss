@@ -1,0 +1,46 @@
+.topMovies-list{
+    margin-bottom: 20px;
+}
+
+.movie-card {
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    img {
+        height: 400px;
+        margin:auto
+    }
+    Button{
+        display:block;
+        margin:auto;
+    }
+}
+
+.button-delete {
+  background-color: rgb(98, 90, 90);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  height: 50px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+
+.accountDetails {
+    display: inline-block;
+    height: auto;
+    width: auto;
+
+}

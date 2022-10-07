@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import './movie-view.scss';
 
@@ -9,7 +10,7 @@ export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
     return (
-      <Container fluid className="movie-view mx-auto " sm={12} md={6} lg={3}>
+      <Container fluid className="movie-view">
         <Row>
           <Col className="movie-poster">
             <img src={movie.imgURL} crossOrigin="true" />
@@ -22,8 +23,15 @@ export class MovieView extends React.Component {
         <Row className="movie-description">
           <Col className="label">Description: </Col>
           <Col className="value">{movie.description}</Col>
+          <Link to={`/directors/${movie.director.name}`}>
+            <Button variant="link">Director Info</Button>
+          </Link>
+          <Link to={`/genres/${movie.genre.name}`}>
+            <Button variant="link">Genre Info</Button>
+          </Link>
+          <Button size='sm' onClick={() => {onBackClick(null);}}>Back</Button>
         </Row>
-        <Button onClick={() => { onBackClick(null); }}>Back to Homepage!</Button>
+        
       </Container>
     );
   }

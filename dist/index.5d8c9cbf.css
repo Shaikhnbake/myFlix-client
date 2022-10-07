@@ -1,3 +1,17 @@
+.search-bar {
+  max-width: 50%;
+}
+
+.movie-card {
+  justify-content: center;
+  display: flex;
+}
+
+.button {
+  border-style: double;
+  border-color: #000;
+}
+
 .registration-view {
   justify-content: center;
   display: flex;
@@ -59,24 +73,16 @@
   position: relative;
 }
 
-
-
-.search-bar {
-  max-width: 50%;
+.accountDetails {
+  height: auto;
+  width: auto;
+  display: inline-block;
 }
 
-.movie-card {
-  justify-content: center;
-  display: flex;
-}
 
-.button {
-  border-style: double;
-  border-color: #000;
-}
 
 .my-flix {
   color: #000;
 }
 
-/*# sourceMappingURL=index.3bb28fe2.css.map */
+/*# sourceMappingURL=index.5d8c9cbf.css.map */
